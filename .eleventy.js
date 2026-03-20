@@ -27,9 +27,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "src/public": "/",
-    "node_modules/beercss/dist/cdn/beer.min.css": "/modules/beercss/beer.min.css",
-    "node_modules/beercss/dist/cdn/beer.min.js": "/modules/beercss/beer.min.js",
-    "node_modules/material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js": "/modules/material-dynamic-colors/material-dynamic-colors.min.js",
   });
 
   return {

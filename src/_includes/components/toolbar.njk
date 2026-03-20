@@ -1,65 +1,61 @@
-<header class="fixed transparent padding min">
+<header class="brutal-header-centered">
 
-    <nav class="center-align tiny-space">
+    <nav class="brutal-toolbar-box">
+        <div class="brutal-toolbar-items">
+            {% include "components/profile.njk" %}
 
-        <nav class="toolbar transparent">
+            {% for item in site.toolbarItems %}
 
-            <nav class="no-space wrap">
-                {% include "components/profile.njk" %}
+            {% if item.type == "menu" %}
+            <button class="brutal-icon-btn" aria-label="{{ item.name }}">
+                <i>{% icon item.icon %}</i>
+                <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>
 
-                {% for item in site.toolbarItems %}
+                <menu class="brutal-menu">
+                    {% for sub in item.items %}
+                    <li>
+                        {% if sub.href %}
+                        <a href="{{ sub.href }}" class="brutal-menu-link">{{ sub.label }}</a>
+                        {% else %}
+                        <a class="brutal-menu-link">{{ sub.label }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </menu>
+            </button>
+            {% endif %}
 
-                {% if item.type == "menu" %}
-                <button class="circle transparent" aria-label="{{ item.name }}">
-                    <i>{% icon item.icon %}</i>
-                    <div class="tooltip right">{{ item.name }}</div>
+            {% if item.type == "button" %}
+            <button class="brutal-icon-btn" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+                <i>{% icon item.icon %}</i>
+                <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>
+            </button>
+            {% endif %}
 
-                    <menu class="no-wrap">
-                        {% for sub in item.items %}
-                        <li>
-                            {% if sub.href %}
-                            <a href="{{ sub.href }}">{{ sub.label }}</a>
-                            {% else %}
-                            <a>{{ sub.label }}</a>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </menu>
-                </button>
-                {% endif %}
+            {% if item.type == "link" %}
+            <a class="brutal-icon-btn" href="{{ item.href }}" aria-label="{{ item.name }}">
+                <i>{% icon item.icon %}</i>
+                <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>
+            </a>
+            {% endif %}
 
-                {% if item.type == "button" %}
-                <button class="circle transparent" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
-                    <i>{% icon item.icon %}</i>
-                    <div class="tooltip bottom">{{ item.name }}</div>
-                </button>
-                {% endif %}
+            {% if item.type == "themeToggle" %}
+            <button class="brutal-icon-btn" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+                <i class="dark">{% icon item.iconDark %}</i>
+                <i class="light">{% icon item.iconLight %}</i>
+                <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>
+            </button>
+            {% endif %}
 
-                {% if item.type == "link" %}
-                <a class="button circle transparent" href="{{ item.href }}" aria-label="{{ item.name }}">
-                    <i>{% icon item.icon %}</i>
-                    <div class="tooltip bottom">{{ item.name }}</div>
-                </a>
-                {% endif %}
+            {% endfor %}
+        </div>
 
-                {% if item.type == "themeToggle" %}
-                <button class="circle transparent" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
-                    <i class="dark">{% icon item.iconDark %}</i>
-                    <i class="light">{% icon item.iconLight %}</i>
-                    <div class="tooltip bottom">{{ item.name }}</div>
-                </button>
-                {% endif %}
-
-                {% endfor %}
-
-            </nav>
-
-        </nav>
-
-        <button class="extra round circle elevate" data-ui="#dialog-comments" aria-label="Comments">
+        {% if site.giscus.enabled %}
+        <button class="brutal-icon-btn brutal-btn-highlight" data-ui="#dialog-comments" aria-label="Comments">
             <i>{% icon "lucide:messages-square" %}</i>
-            <div class="tooltip bottom">Comments</div>
-        </a>
+            <span class="brutal-tooltip brutal-tooltip-bottom">Comments</span>
+        </button>
+        {% endif %}
 
     </nav>
 

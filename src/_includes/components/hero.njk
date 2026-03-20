@@ -1,0 +1,47 @@
+<header class="brutal-hero">
+    <h1>Trot's Den</h1>
+    <p>Salesforce Development, eksperymenty LWC i przemyślenia o kodzie. Minimalistycznie i brutalnie szczerze.</p>
+</header>
+
+<div class="bento-grid">
+    
+    {% set recentPosts = collections.posts | reverse %}
+    
+    {% for post in recentPosts %}
+        {% if loop.index0 < 5 %}
+        
+            <article class="bento-card {% if loop.index0 == 0 %}span-2{% endif %}">
+                
+                <div class="bento-tags-wrapper">
+                    {% set hasTags = false %}
+                    
+                    {% if post.data.tags %}
+                        {% for tag in post.data.tags %}
+                            {% if "posts" not in tag %}
+                                <a href="/tags/{{ tag | slugify }}/" class="tag">#{{ tag }}</a>
+                                {% set hasTags = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if not hasTags %}
+                        <a href="/tags/wpis/" class="tag">#Wpis</a>
+                    {% endif %}
+                </div>
+                
+                <h3>{{ post.data.title }}</h3>
+                <p>{{ post.data.description | default('Kliknij, aby przeczytać ten artykuł i zgłębić temat.') }}</p>
+                
+                <a href="{{ post.url }}" class="read-more">Czytaj dalej &rarr;</a>
+                
+            </article>
+            
+        {% endif %}
+    {% endfor %}
+    
+    <a href="/tags/posts/" class="bento-card bento-card-more">
+        <h3>Więcej</h3>
+        <p>Zobacz wszystkie wpisy.</p>
+    </a>
+
+</div>

@@ -1,15 +1,15 @@
-<nav class="m l left center-align" id="menu">
+<nav class="brutal-nav-side" id="menu">
     {% for item in site.menuItems %}
-    <a {% if item.url %}href="{{ item.url }}"{% endif %}>
+    <a class="brutal-nav-link" {% if item.dialog %}data-ui="{{ item.dialog }}" href="#"{% elif item.url %}href="{{ item.url }}"{% endif %}>
         <i>{% icon item.icon %}</i>
         <span>{{ item.title }}</span>
     </a>
     {% endfor %}
 </nav>
 
-<nav class="s bottom">
+<nav class="brutal-nav-bottom">
     {% for item in site.menuItems %}
-    <a {% if item.url %}href="{{ item.url }}"{% endif %}>
+    <a class="brutal-nav-link" {% if item.dialog %}data-ui="{{ item.dialog }}" href="#"{% elif item.url %}href="{{ item.url }}"{% endif %}>
         <i>{% icon item.icon %}</i>
         <span>{{ item.title }}</span>
     </a>

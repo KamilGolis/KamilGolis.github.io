@@ -1,26 +1,14 @@
-<div class="row vertical tiny-space fixed bottom right m l" id="buttons-container">
-    <button class="circle fill elevate" data-ui="#dialog-toc" aria-label="Table of Contents">
+<div class="brutal-fab-panel">
+    <button class="brutal-icon-btn" data-ui="#dialog-toc" aria-label="Spis zawartości">
         <i>{% icon "lucide:table-of-contents" %}</i>
-        <div class="tooltip left">Table of Contents</div>
+        <span class="brutal-tooltip brutal-tooltip-right">Spis zawartości</span>
     </button>
-    <a href="#top" class="button circle fill elevate" aria-label="Go to top">
+    <a href="#top" class="brutal-icon-btn" aria-label="Wróć na początek strony">
         <i>{% icon "lucide:arrow-up" %}</i>
-        <div class="tooltip left">Go to top</div>
+        <span class="brutal-tooltip brutal-tooltip-right">Wróć na początek</span>
     </a>
-    <a href="https://github.com/{{ site.ghRepo }}/issues" class="button circle fill elevate" aria-label="File an issue">
+    <a href="https://github.com/{{ site.ghRepo }}/issues" class="brutal-icon-btn" aria-label="Utwórz Issue">
         <i>{% icon "lucide:bug" %}</i>
-        <div class="tooltip left">File an issue</div>
+        <span class="brutal-tooltip brutal-tooltip-right">Utwórz Issue</span>
     </a>
 </div>
-
-
-<nav class="s center-align large-padding">
-    <button class="circle fill elevate" data-ui="#dialog-toc" aria-label="Table of Contents">
-        <i>{% icon "lucide:table-of-contents" %}</i>
-        <div class="tooltip top">Table of Contents</div>
-    </button>
-    <a href="https://github.com/{{ site.ghRepo }}/issues" class="button circle fill elevate" aria-label="File an issue">
-        <i>{% icon "lucide:bug" %}</i>
-        <div class="tooltip top">File an issue</div>
-    </a>
-</nav>
