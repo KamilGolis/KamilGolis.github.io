@@ -1,18 +1,17 @@
-<div class="space"></div>
-<footer class="grid large-padding">
+<div class="large-space"></div>
+<footer class="brutal-footer">
 
-  <div class="s12 m8 l8">
-    <a class="name" href="{{ site.url }}">{{ site.title }}</a>
-    <p class="no-margin">{{ site.description }}</p>
+  <div class="brutal-footer-brand">
+    <a class="brutal-footer-name" href="{{ site.url }}">{{ site.title }}</a>
+    <p class="brutal-footer-desc">{{ site.description }}</p>
   </div>
 
-  <div class="s12 m4 l4 row right-align">
+  <div class="brutal-footer-social">
     {% for item in site.socialItems %}
-    <a class="button circle transparent" href="{{ item.url }}" aria-label="{{ item.title }}" {% if item.rel %}rel="{{ item.rel }}"{% endif %}>
-      {% icon "si:" + item.icon %}
-      <div class="tooltip">{{ item.title }}</div>
+    <a class="brutal-footer-icon" href="{{ item.url }}" aria-label="{{ item.title }}" {% if item.rel %}rel="{{ item.rel }}"{% endif %}>
+      {% icon item.icon %}
     </a>
     {% endfor %}
   </div>
-  
+
 </footer>

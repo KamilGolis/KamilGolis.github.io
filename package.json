@@ -1,6 +1,6 @@
 {
-  "name": "11ty-beer",
-  "version": "1.2.0",
+  "name": "Trot's Den",
+  "version": "1.0.0",
   "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
@@ -8,19 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LIGMATV/11ty-beer.git"
+    "url": "https://github.com/KamilGolis/KamilGolis.github.io"
   },
   "keywords": [
     "eleventy",
     "11ty",
     "material-design",
-    "pwa"
+    "pwa",
+    "salesforce"
   ],
-  "author": "LIGMATV",
+  "author": "KamilGolis",
   "license": "MIT",
-  "homepage": "https://github.com/LIGMATV/11ty-beer#readme",
+  "homepage": "https://kamilgolis.github.io",
   "bugs": {
-    "url": "https://github.com/LIGMATV/11ty-beer/issues"
+    "url": "https://github.com/KamilGolis/KamilGolis.github.io/issues"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -28,7 +29,6 @@
     "@mdi/svg": "^7.4.47",
     "@pagefind/modular-ui": "^1.4.0",
     "@uncenter/eleventy-plugin-toc": "^1.0.3",
-    "beercss": "^3.13.1",
     "eleventy-plugin-icons": "^4.5.7",
     "feather-icons": "^4.29.2",
     "html-minifier-terser": "^7.2.0",
@@ -36,7 +36,6 @@
     "lucide-static": "^0.562.0",
     "luxon": "^3.7.2",
     "markdown-it": "^14.1.0",
-    "material-dynamic-colors": "^1.1.2",
     "pagefind": "^1.4.0",
     "simple-icons": "^16.3.0"
   }

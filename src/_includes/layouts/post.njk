@@ -3,88 +3,96 @@ layout: layouts/default.njk
 ---
 <div class="large-space"></div>
 
-
-<header class="no-padding post-header">
+<header class="brutal-article-header">
 
     {% if site.cover %}
     <div class="grid">
-
-        <div class="s12 m12 l6 round large-padding surface-container">
+        <div class="s12 m12 l6 brutal-article-col">
     {% else %}
-            <div class="round large-padding surface-container">
+        <div>
     {% endif %}
 
-                <div class="large-padding center middle">
-                    <div>
-                        <p class="bold semi-text no-margin" data-pagefind-ignore>
-                            {{ date | readableDate }}
-                        </p>
-                        {% if lastUpdated %}
-                        <p class="secondary-text small-text no-margin" data-pagefind-ignore>
-                            Updated on {{ lastUpdated | readableDate }}
-                        </p>
-                        {% endif %}
-                        <h1 data-pagefind-meta="title" class="large no-margin">{{ title }}</h1>
-
-                        <p class="bold semi-text no-margin">{{ description }}</p>
-                    </div>
-                    <div class="large-space"></div>
-                    <nav class="no-margin">
-                        <nav class="scroll max tiny-space" data-pagefind-ignore>
-                            {% for tag in tags %}
-                            {% if "posts" not in tag %}
-                            <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
-                            {% endif %}
-                            {% endfor %}
-                        </nav>
-                        <nav class="no-space post-action">
-                            <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
-                                class="circle button transparent" aria-label="View source of this page">
-                                <i>{% icon "lucide:file-braces" %}</i>
-                                <div class="tooltip bottom">View source of this page</div>
-                            </a>
-                            <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
-                                class="circle button transparent" aria-label="Edit this page">
-                                <i>{% icon "lucide:file-clock" %}</i>
-                                <div class="tooltip bottom">View history of this page</div>
-                            </a>
-                            <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
-                                class="circle button transparent" aria-label="Edit this page">
-                                <i>{% icon "lucide:file-pen" %}</i>
-                                <div class="tooltip bottom">Edit this page</div>
-                            </a>
-                        </nav>
-                    </nav>
+            <div>
+                <div class="brutal-article-meta" data-pagefind-ignore style="margin-bottom: 1rem;">
+                    📅 {{ date | readableDate }}
+                    {% if lastUpdated %}
+                        <span class="brutal-meta-divider">//</span>
+                        Aktualizacja: {{ lastUpdated | readableDate }}
+                    {% endif %}
                 </div>
+                
+                <h1 data-pagefind-meta="title" class="brutal-article-title">{{ title }}</h1>
+                <p class="brutal-article-desc">{{ description }}</p>
+            </div>
+            
+            <div class="brutal-article-actions-bar">
+                
+                <nav class="bento-tags-wrapper brutal-tags-nav" data-pagefind-ignore>
+                    {% for tag in tags %}
+                        {% if "posts" not in tag %}
+                            <a class="tag" href="/tags/{{ tag }}/">#{{ tag }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </nav>
+                
+                <nav class="brutal-github-nav post-action">
+                    <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
+                        class="brutal-icon-btn" aria-label="Pokaż źródło strony">
+                        <i>{% icon "lucide:file-braces" %}</i>
+                        <span class="brutal-tooltip brutal-tooltip-bottom">Pokaż źródło strony</span>
+                    </a>
+                    <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
+                        class="brutal-icon-btn" aria-label="Historia strony">
+                        <i>{% icon "lucide:file-clock" %}</i>
+                        <span class="brutal-tooltip brutal-tooltip-bottom">Pokaż historię strony</span>
+                    </a>
+                    <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
+                        class="brutal-icon-btn" aria-label="Edytuj stronę">
+                        <i>{% icon "lucide:file-pen" %}</i>
+                        <span class="brutal-tooltip brutal-tooltip-bottom">Edytuj stronę</span>
+                    </a>
+                </nav>
             </div>
 
     {% if site.cover %}
-            <div class="s12 m12 l6 post-cover round">
-                {% if cover %}
-                <img class="responsive" src="{{ cover.img }}" alt="{{ cover.alt }}" title="{{ cover.alt }}">
-                {% endif %}
-            </div>
-
+        </div>
+        
+        <div class="s12 m12 l6 post-cover">
+            {% if cover %}
+            <img class="brutal-cover-img" src="{{ cover.img }}" alt="{{ cover.alt }}" title="{{ cover.alt }}">
+            {% endif %}
         </div>
     </div>
+    {% else %}
+        </div>
     {% endif %}
 
 </header>
 
-<div class="marginize large-padding">
-    <div class="large-space"></div>
-    <div class="small-text">Posted by</div>
-    <nav>
-        {% include "components/profile.njk" %}
-        <span class="bold">{{ site.author }}</span>
-    </nav>
-    <hr class="large">
+<div class="brutal-author-block">
+    {% include "components/profile.njk" %}
+    <div>
+        <div class="brutal-author-label">Autor</div>
+        <div class="brutal-author-name">{{ site.author }}</div>
+    </div>
 </div>
 
-{% include "components/post-buttons.njk" %}
+<div class="brutal-post-buttons-wrapper">
+    {% include "components/post-buttons.njk" %}
+</div>
 
-<article class="post transparent no-padding">
+<article class="brutal-content">
     {{ content | safe }}
 </article>
 
-{{ content | toc | safe }}
+<dialog id="dialog-toc" class="brutal-dialog">
+    <div class="brutal-dialog-header">
+        <h3>Spis zawartości</h3>
+        <button class="brutal-icon-btn" data-ui="#dialog-toc" aria-label="Zamknij">
+            <i>{% icon "lucide:x" %}</i>
+        </button>
+    </div>
+    <div class="brutal-content">
+        {{ content | toc | safe }}
+    </div>
+</dialog>

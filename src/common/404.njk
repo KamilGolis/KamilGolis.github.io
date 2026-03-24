@@ -3,22 +3,21 @@ permalink: /404.html
 eleventyExcludeFromCollections: true
 excludeFromSitemap: true
 layout: layouts/default.njk
-title: "Not Found"
-description: Sorry, this page doesn't exist.
+title: "Nie znaleziono strony"
+description: Ewidentnie strona o podanym adrsie nie istnieje :)
 ---
 
 <div class="large-space"></div>
 
 <article class="transparent center-align post">
     <div>
-      <i class="extra">{% icon "mdi:close-circle-outline" %}</i>
       <h2>{{ title }}</h2>
       <p>
         {{ description }} <br>
-        Try to visit our <a href="/">homepage</a> or <a href="javascript:ui('#dialog-posts');">posts</a>.
+        Wróć na <a href="/">stronę główną</a> lub wyświetl <a href="javascript:ui('#dialog-posts');">wszystkie posty</a>.
       </p>
       <div class="space"></div>
-      <label>If you think this is an issue, try to make an issue in our GitHub repository.</label>
+      <label>Jeżeli uważasz, że to błąd, daj znać poprzez otworzenie Issue na moim Githubie.</label>
       <nav class="center-align">
         <a class="button border" href="https://github.com/{{ site.ghRepo }}/issues/new">New issue</a>
       </nav>

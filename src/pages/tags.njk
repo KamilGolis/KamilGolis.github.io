@@ -7,43 +7,52 @@ pagination:
   alias: tag
 eleventyComputed:
   title: "#{{ tag }}"
-  description: "All the posts that tagged with #{{ tag }}."
+  description: "Wszystkie posty zawierające tag #{{ tag }}."
 pagefind_ignore: true
 ---
 
-<div class="marginize padding">
+<div class="brutal-page-wrapper">
 
-  <div class="large-space"></div>
-  <h1>
-    <span class="link">#</span><span>{{ tag }}</span>
-  </h1>
-  <div class="space"></div>
+    <header class="brutal-page-header">
+        <h1 class="brutal-page-title">
+            <span class="brutal-text-primary">#</span>{{ tag }}
+        </h1>
+    </header>
 
-  <div class="grid article-list">
-    {% for post in collections.posts | filterByTag(tag) | reverse %}
-    <article class="wave round no-padding no-elevate s12 m6 l6">
-      <a href="{{ post.url }}"></a>
-      {% if site.cover %}
-      <div class="post-cover">
-        {% if post.data.cover %}
-        <img class="responsive" src="{{ post.data.cover.img }}" alt="{{ post.data.cover.alt }}">
-        {% endif %}
-      </div>
-      {% endif %}
-      <div class="large-padding">
-        <p class="helper">{{ post.date | readableDate }}</p>
-        <h3 class="sbold no-margin">{{ post.data.title }}</h3>
-        <p class="helper">{{ post.data.description }}</p>
-        <nav class="article-tags scroll max tiny-space">
-          {% for tag in post.data.tags %}
-          {% if "posts" not in tag %}
-          <a class="button border no-round" href="/tags/{{ tag }}/">#{{ tag }}</a>
-          {% endif %}
-          {% endfor %}
-        </nav>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-
+    <div class="brutal-page-grid">
+        
+        {% for post in collections.posts | filterByTag(tag) | reverse %}
+        
+        <article class="bento-card bento-card-compact">
+            
+            {% if site.cover and post.data.cover %}
+            <img class="bento-card-img" src="{{ post.data.cover.img }}" alt="{{ post.data.cover.alt | default(post.data.title) }}">
+            {% endif %}
+            
+            <div class="bento-tags-wrapper">
+                {% set hasTags = false %}
+                
+                {% for postTag in post.data.tags %}
+                    {% if "posts" not in postTag and "post" not in postTag %}
+                    <a class="tag" href="/tags/{{ postTag | slugify }}/">#{{ postTag }}</a>
+                    {% set hasTags = true %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if not hasTags %}
+                    <a href="/tags/wpis/" class="tag">#Wpis</a>
+                {% endif %}
+            </div>
+            
+            <p class="bento-card-date">{{ post.date | readableDate }}</p>
+            <h3 class="bento-card-title">{{ post.data.title }}</h3>
+            <p class="bento-card-desc">{{ post.data.description | default('Kliknij, aby przeczytać.') }}</p>
+            
+            <a href="{{ post.url }}" class="read-more">Czytaj dalej &rarr;</a>
+            
+        </article>
+        
+        {% endfor %}
+        
+    </div>
 </div>

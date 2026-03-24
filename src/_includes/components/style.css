@@ -1,6 +1,4 @@
-/*
-    Font face
-*/
+
 @font-face {
     font-family: 'Google Sans';
     src: url('/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf') format('truetype');
@@ -33,15 +31,22 @@
     font-display: swap;
 }
 
-
-/*
-    base.
-*/
-
 body {
     --font: "Google Sans", sans-serif;
     --font-code: "Google Sans Code", monospace;
     --font-icon: none !important;
+
+    
+    --speed1: 0.1s;
+    --speed2: 0.2s;
+    --speed3: 0.3s;
+
+    
+    --primary-container: rgba(41, 182, 246, 0.1);
+    --secondary-container: rgba(139, 92, 246, 0.1);
+    --tertiary-container: rgba(236, 72, 153, 0.1);
+    --surface-variant: rgba(63, 63, 70, 0.3);
+    --surface-container: rgba(24, 24, 27, 0.8);
 
     --mesh-bg:
         radial-gradient(at 40% 20%, var(--primary-container), transparent 60%),
@@ -57,14 +62,8 @@ body {
     --shadow-glass: 0 0.75rem 1.5rem -1rem rgb(0 0 0 / 0.5);
 }
 
-
-/*
-    Normalize a bit
-*/
 html {
     scroll-behavior: smooth;
-    opacity: 0;
-    animation: fadeIn var(--speed3) ease-in-out forwards;
 }
 
 body {
@@ -105,10 +104,6 @@ table {
     scroll-margin-block-start: 15vh;
 }
 
-
-/*
-    Layout
-*/
 :is(.post, .marginize, footer) {
     max-inline-size: min(100vw, 55rem) !important;
     margin: 0 auto;
@@ -128,11 +123,6 @@ nav:is(.left, .right) {
     padding: 0 2rem;
 }
 
-
-/*
-    Typography
-    it's looks better
-*/
 strong,
 .bold {
     font-weight: 600;
@@ -169,11 +159,6 @@ blockquote {
     padding: 0 1rem;
 }
 
-
-/* 
-    Post-only css
-    it's just available inside of .post element if you ask
-*/
 .post a:not(.button),
 .toc a {
     text-decoration: underline;
@@ -230,9 +215,6 @@ blockquote {
     }
 }
 
-/*
-    Lists for something
-*/
 :is(ul, ol) :is(ul, ol) {
     margin-block-start: 0 !important;
 }
@@ -249,20 +231,19 @@ blockquote {
     white-space: normal;
 }
 
-
-/*
-    Code ==> more in prism-theme.css
-*/
-pre,
 code {
     font-family: var(--font-code);
-    background: var(--secondary-container);
     color: inherit;
 }
 
-code {
-    padding: 0 .25rem;
-    border-radius: .25rem;
+:not(pre) > code {
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    background: #27272a !important;
+    border: 1px solid #3f3f46;
+    color: #29b6f6;
+    font-size: 0.9em;
+    white-space: nowrap;
 }
 
 .pre-container>* {
@@ -283,10 +264,6 @@ code {
     overflow-x: auto;
 }
 
-
-/*
-    Icons
-*/
 .post svg {
     width: 1.75rem;
     height: 1.75rem;
@@ -305,10 +282,6 @@ svg[fill=none] {
     fill: none;
 }
 
-
-/*
-    PageFind Search
-*/
 #pf--wrapper {
     margin-top: .5rem;
     transform: scale(.5) translateY(-2.75rem);
@@ -356,10 +329,6 @@ svg[fill=none] {
     color: var(--on-surface);
 }
 
-
-/*
-    Header anchor
-*/
 *:has(>.header-anchor) {
     margin-block-start: 2.25rem !important;
     position: relative;
@@ -382,10 +351,6 @@ svg[fill=none] {
     content: "#";
 }
 
-
-/*
-    Misc.
-*/
 body.light i.light,
 body.dark i.dark,
 body:has(#menu.max) .menu-base,

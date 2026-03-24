@@ -1,27 +1,29 @@
 ---
 permalink: /tags/index.html
 layout: layouts/default.njk
-title: "All tags"
-description: All the tags i used for the posts in this website.
+title: "Lista tagów"
+description: Lista wszystkich użytych tagów w postach.
 pagefind_ignore: true
 ---
 
-<div class="marginize padding">
+<div class="brutal-page-wrapper">
 
-  <div class="large-space"></div>
-  <h1>{{ title }}</h1>
-  <div class="space"></div>
+    <header class="brutal-page-header">
+        <h1 class="brutal-page-title">{{ title }}</h1>
+        <p class="brutal-page-desc">{{ description }}</p>
+    </header>
 
-  <article class="no-padding round" style="overflow: hidden;">
-    {% for tag in collections.tagsList %}
-    <a class="row wave padding" href="/tags/{{ tag | slug }}/">
-      <i>{% icon "lucide:hash" %}</i>
-      <div class="max">
-        <h6>{{ tag }}</h6>
-      </div>
-    </a>
-    <hr>
-    {% endfor %}
-  </article>
+    <ul class="brutal-tags-grid">
+        
+        {% for tag in collections.tagsList %}
+        <li>
+            <a class="brutal-tag-link-large" href="/tags/{{ tag | slug }}/">
+                <i>{% icon "lucide:hash" %}</i>
+                <span>{{ tag }}</span>
+            </a>
+        </li>
+        {% endfor %}
+        
+    </ul>
 
 </div>

@@ -1,25 +1,24 @@
 {
-    "locale": "en_US",
-    "lang": "en",
-    "title": "11ty Beer Web",
-    "shortTitle": "11ty Beer",
-    "author": "W3Teal",
-    "url": "https://11ty-beer.vercel.app",
-    "theme": "#6750a4",
-    "description": "Welcome to my blog, powered by 11ty & BeerCSS.",
-    "ghRepo": "w3teal/11ty-beer",
-    "keywords": ["eleventy", "material", "pwa"],
-    "cover": true,
+    "locale": "pl",
+    "lang": "pl",
+    "title": "Trot's Den",
+    "shortTitle": "Trot's Den",
+    "author": "Kamil Golis",
+    "url": "https://kamilgolis.github.io",
+    "theme": "#009688",
+    "description": "@ 2026 - by Kamil Golis",
+    "ghRepo": "KamilGolis.github.io",
+    "keywords": ["eleventy", "material", "pwa", "salesforce", "apex", "lwc"],
+    "cover": false,
     "socialItems": [{
             "title": "GitHub",
-            "url": "https://github.com/w3teal/11ty-beer",
-            "icon": "github"
+            "url": "https://github.com/KamilGolis",
+            "icon": "si:github"
         },
         {
-            "title": "Mastodon",
-            "url": "https://fosstodon.org/@w3teal",
-            "icon": "mastodon",
-            "rel": "me"
+            "title": "LinkedIn",
+            "url": "https://www.linkedin.com/in/kamil-golis-9a048858/",
+            "icon": "feather:linkedin"
         }
     ],
     "menuItems": [{
@@ -28,37 +27,24 @@
             "icon": "lucide:house"
         },
         {
-            "title": "Posts",
-            "url": "javascript:ui('#dialog-posts');",
+            "title": "Posty",
+            "dialog": "#dialog-posts",
             "icon": "lucide:sticky-note"
         },
         {
-            "title": "Tags",
-            "url": "javascript:ui('#dialog-tags');",
+            "title": "Tagi",
+            "dialog": "#dialog-tags",
             "icon": "lucide:tags"
         }
     ],
     "toolbarItems": [{
-            "name": "Search",
+            "name": "Szukaj...",
             "type": "button",
             "icon": "lucide:search",
             "onClick": "document.getElementById('pf--wrapper').classList.toggle('active');"
         },
         {
-            "name": "Theme",
-            "type": "link",
-            "icon": "lucide:palette",
-            "href": "javascript:ui('#dialog-themes');"
-        },
-        {
-            "name": "Toggle theme",
-            "type": "themeToggle",
-            "iconDark": "lucide:moon",
-            "iconLight": "lucide:sun",
-            "onClick": "mode()"
-        },
-        {
-            "name": "Feed",
+            "name": "RSS",
             "type": "menu",
             "icon": "lucide:rss",
             "items": [{
@@ -72,17 +58,10 @@
             ]
         }
     ],
-    "giscus": {
-        "enabled": true,
-        "dataRepo": "w3teal/11ty-beer",
-        "dataRepoID": "R_kgDONgFKcg",
-        "dataCategory": "Website Comments",
-        "dataCategoryID": "DIC_kwDONgFKcs4C0Yci"
-    },
     "hero": {
-        "name": "11ty Beer, powered by Eleventy v3.1.2.",
-        "title": "Blogging in 11ty has never been so easy.",
-        "description": "Simply set your configuration and start writing posts in Markdown without hassle.",
+        "name": "Trochę technicznie i życiowo...",
+        "title": "Osobiste doświadczenia zapisane.",
+        "description": "Na blogu znajdziesz posty dotyczące technologii Salesforce oraz moje osobiste doświadczenia życiowe.",
         "image": {
             "src": "/11ty-beer-hero.svg",
             "alt": "hero image"
@@ -165,5 +144,12 @@
             "icon": "lucide:book-up",
             "url": "/posts/getting-started"
         }
+    },
+    "giscus": {
+        "enabled": false,
+        "dataRepo": "",
+        "dataRepoID": "",
+        "dataCategory": "",
+        "dataCategoryID": ""
     }
 }

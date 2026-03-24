@@ -12,7 +12,7 @@
       wrapper.className = "pre-container";
 
       const header = document.createElement("header");
-      header.className = "row secondary-container top-round";
+      header.className = "row secondary-container";
 
       const langMatch = codeElem.className.match(/language-(\w+)/);
       const langText = langMatch ? langMatch[1].toLowerCase() : "";
@@ -23,7 +23,7 @@
 
       const btn = document.createElement("button");
       btn.className = "circle transparent copy-code-btn";
-      btn.setAttribute("aria-label", "Copy code");
+      btn.setAttribute("aria-label", "Kopiuj kod");
       btn.innerHTML = ICON_COPY;
 
       let resetTimer;
