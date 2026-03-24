@@ -1,10 +1,11 @@
 {
   "name": "Trot's Den",
   "version": "1.0.0",
-  "description": "An 11ty blog template with Material Design, PWA and minified files that simply works.",
+  "description": "An 11ty blog template with Brutalism, PWA and minified files that simply works.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/KamilGolis.github.io/"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [
     "eleventy",
     "11ty",
-    "material-design",
+    "Brutalism",
     "pwa",
     "salesforce"
   ],
