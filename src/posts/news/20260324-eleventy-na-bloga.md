@@ -13,8 +13,7 @@ Stało się – `Google Sites` oficjalnie odeszło do lamusa. Przeprowadziłem s
 
 Postanowiłem wywrócić warstwę wizualną do góry nogami. Pożegnałem `beer-css` i postawiłem na własny arkusz stylów w klimacie neobrutalizmu. Dlaczego? Bo jaram się tą surowością – grubymi ramkami, jaskrawymi kolorami i brakiem strachu przed „brzydotą”, która ma swój unikalny charakter.
 
-Walka na dwóch frontach: Kod vs Rzeczywistość
-Nie będę kłamał – nie poszło jak z płatka. Konwersja i stawianie wszystkiego od zera dostarczyły mi więcej problemów, niż zakładałem. Największym wyzwaniem nie był jednak sam JavaScript czy Nunjuck, a... czas.
+Walka na dwóch frontach: Kod vs Rzeczywistość. Nie będę kłamał – nie poszło jak z płatka. Konwersja i stawianie wszystkiego od zera dostarczyły mi więcej problemów, niż zakładałem. Największym wyzwaniem nie był jednak sam JavaScript czy Nunjuck, a... czas.
 
 Mając w domu 14-miesięcznego szkraba, pojęcie „wolnej chwili” praktycznie nie istnieje. Każda linijka kodu była pisana w boju – między drzemką a układaniem klocków. Efekt? Strona żyje, ale wciąż jest placem budowy.
 
@@ -26,7 +25,7 @@ Jeśli coś u Was nie wyświetla się tak, jak powinno – spokojnie, prawdopodo
 - Gdzieniegdzie straszą bugi w responsywności.
 - Customowy CSS wciąż wymaga solidnego doszlifowania.
 
-Aktualnie skupiłem się na tym, żeby „szkielet” stał stabilnie. Sama migracja starego contentu to temat na inną rozmowę – pewnie zajmie mi to jeszcze trochę czasu, bo przy małym dziecku priorytety ustawiają się same.
+Aktualnie skupiłem się na tym, żeby „szkielet” stał stabilnie. Sama migracja starego contentu to temat na innego posta – pewnie zajmie mi to jeszcze trochę czasu, bo przy małym dziecku priorytety ustawiają się same.
 
 Zaglądajcie tu czasem, bo mimo błędów, czuję ogromną satysfakcję, że w końcu jestem „na swoim”. Neobrutalizm nadchodzi!
 
