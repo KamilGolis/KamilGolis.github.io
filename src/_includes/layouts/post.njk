@@ -36,17 +36,17 @@ layout: layouts/default.njk
                 </nav>
                 
                 <nav class="brutal-github-nav post-action">
-                    <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/src/posts/{{ page.fileSlug }}.md"
+                    <a href="https://raw.githubusercontent.com/{{ site.ghRepo }}/main/{{ page.inputPath | replace("./", "") }}"
                         class="brutal-icon-btn" aria-label="Pokaż źródło strony">
                         <i>{% icon "lucide:file-braces" %}</i>
                         <span class="brutal-tooltip brutal-tooltip-bottom">Pokaż źródło strony</span>
                     </a>
-                    <a href="https://github.com/{{ site.ghRepo }}/commits/main/src/posts/{{ page.fileSlug }}.md"
+                    <a href="https://github.com/{{ site.ghRepo }}/commits/main/{{ page.inputPath | replace("./", "") }}"
                         class="brutal-icon-btn" aria-label="Historia strony">
                         <i>{% icon "lucide:file-clock" %}</i>
                         <span class="brutal-tooltip brutal-tooltip-bottom">Pokaż historię strony</span>
                     </a>
-                    <a href="https://github.com/{{ site.ghRepo }}/edit/main/src/posts/{{ page.fileSlug }}.md"
+                    <a href="https://github.com/{{ site.ghRepo }}/edit/main/{{ page.inputPath | replace("./", "") }}"
                         class="brutal-icon-btn" aria-label="Edytuj stronę">
                         <i>{% icon "lucide:file-pen" %}</i>
                         <span class="brutal-tooltip brutal-tooltip-bottom">Edytuj stronę</span>

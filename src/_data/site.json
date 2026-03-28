@@ -7,7 +7,7 @@
     "url": "https://kamilgolis.github.io",
     "theme": "#009688",
     "description": "@ 2026 - by Kamil Golis",
-    "ghRepo": "KamilGolis.github.io",
+    "ghRepo": "KamilGolis/KamilGolis.github.io",
     "keywords": ["eleventy", "material", "pwa", "salesforce", "apex", "lwc"],
     "cover": false,
     "socialItems": [{
