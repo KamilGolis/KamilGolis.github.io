@@ -1,44 +1,75 @@
-> # This repository has been moved!
-> 
-> See this repository on [SourceHut](https://sourcehut.org/): https://git.sr.ht/~w3teal/11ty-beer
+# Trot's Den
 
-# 11ty Beer
+Personal blog by **Kamil Golis** — a mix of tech and life, built with [Eleventy](https://www.11ty.dev/) and a custom Neo-Brutalism CSS design system.
 
-An 11ty blog template with Material Design, PWA and minified files that simply works.
-
-![Homepage](src/public/img/preview.png)
+🌐 **Live site:** [kamilgolis.github.io](https://kamilgolis.github.io)
 
 ---
 
-## Docs
+## About
 
-Docs are provided in form of a [live demo](https://11ty-beer.vercel.app/).
+This blog covers topics related to Salesforce technology (Apex, LWC) and personal experiences. Posts are written in Markdown and rendered as a fully static site deployed to GitHub Pages.
 
-## Know your rights
-
-This project is under the MIT license:
-
-- **Freedom to Use**: You have the right to use the software for any purpose, whether it's personal, academic, or commercial.
-- **Freedom to Modify**: You can modify the source code of the software to suit your needs or preferences.
-- **Freedom to Distribute**: You have the right to distribute the software, whether in its original form or modified, to others.
-- **Collaboration**: You can collaborate with others on the software's development and improvement.
-- **No License Compatibility Issues**: You can combine the MIT-licensed software with other software, even if they use different licenses.
-- **No Usage Restrictions**: There are no restrictions on the technologies or fields of use, giving you maximum flexibility.
-- **No Royalties**: You are not required to pay any royalties or fees for using, modifying, or distributing the software.
-
-## Contributing guidelines
-
-There are several ways to contribute to this project:
-
-- Reporting issues
-- Discussing potential improvements
-- Contributing code
-- Writing documentation
-- Submitting feature requests
-- Providing feedback
-
-When making any sort of contribution, please make sure to follow [Forgejo's Code of Conduct](https://codeberg.org/forgejo/code-of-conduct). If you don't have the time to read it, just know that all you have to do is be nice, and you'll be just fine.
+The visual design is intentionally raw and structural — high contrast, bold borders, hard drop-shadows, and system fonts. No CSS frameworks.
 
 ---
 
-_Proudly built with [11ty](https://github.com/11ty/eleventy/) and [BeerCSS](https://github.com/beercss/beercss) 🍻✨_ |  _README based on [duckquill](https://codeberg.org/daudix/duckquill)._
+## Tech Stack
+
+| Tool | Version |
+|---|---|
+| [Eleventy](https://www.11ty.dev/) | 3.x |
+| [Pagefind](https://pagefind.app/) | 1.x |
+| [Prism.js](https://prismjs.com/) (via eleventy-plugin-syntaxhighlight) | 5.x |
+| [markdown-it](https://markdown-it.github.io/) | 14.x |
+| [eleventy-plugin-icons](https://github.com/uncenter/eleventy-plugin-icons) | 4.x |
+| Node.js | 22.x |
+
+Icons are sourced from [Lucide](https://lucide.dev/), [MDI](https://pictogrammers.com/library/mdi/), [Simple Icons](https://simpleicons.org/), and [Feather Icons](https://feathericons.com/).
+
+HTML output is minified via `html-minifier-terser`.
+
+---
+
+## Project Structure
+
+```
+src/
+├── _data/          # site.json — global config (title, author, menus, social links, etc.)
+├── _includes/
+│   ├── components/ # Nunjucks partials, brutalism.css, brutalism.js
+│   └── layouts/    # Page layout templates (.njk)
+├── pages/          # Static pages (index, tags, etc.)
+├── posts/          # Markdown blog posts (subdirectories supported)
+└── public/         # Static assets (images, fonts, icons)
+_utilities/         # Eleventy filters and plugins (dates, TOC, icons, etc.)
+```
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm start       # dev server at http://localhost:8080
+npm run build   # production build to _site/
+```
+
+---
+
+## Configuration
+
+All site-wide settings live in `src/_data/site.json`:
+
+- **title / author / url** — basic metadata
+- **menuItems** — sidebar navigation links or dialog triggers
+- **toolbarItems** — top toolbar buttons (search, RSS)
+- **socialItems** — footer social links with icon identifiers
+- **giscus** — comment system config (set `enabled: true` and fill in repo details to activate)
+- **hero / features** — homepage content blocks
+
+---
+
+## License
+
+This project is under the [MIT License](LICENSE).
