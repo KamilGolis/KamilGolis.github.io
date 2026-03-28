@@ -24,7 +24,7 @@
         <ul class="brutal-tag-list">
             {% for tag in collections.tagsList %}
             <li class="brutal-tag-item">
-                <a class="brutal-tag-link{% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} active{% endif %}" data-ui="#dialog-tags" href="/tags/{{ tag | slug }}/">
+                <a class="brutal-tag-link{% if page.url == '/tags/' ~ (tag | slug) ~ '/' %} active{% endif %}" href="/tags/{{ tag | slug }}/">
                     <i>{% icon "lucide:hash" %}</i>
                     {{ tag }}
                 </a>       

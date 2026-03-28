@@ -6,13 +6,7 @@ function createToc(eleventyConfig) {
         ignoredHeadings: ["[data-toc-exclude]"],
         ignoredElements: [".header-anchor"],
         ul: false,
-        wrapper: function (toc) {
-            return `<div class="overlay transparent"></div>
-                <dialog class="right" id="dialog-toc">
-                    <h5>Table of Contents</h5>
-                    <div class="toc vertical-padding">${toc}</div>
-                </dialog>`;
-        }
+        wrapper: (toc) => toc,
     });
 }
 

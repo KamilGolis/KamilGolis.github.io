@@ -377,6 +377,14 @@ body {
 .brutal-icon-btn:hover .brutal-tooltip-right {
     transform: translateY(-50%) translateX(0);
 }
+.brutal-tooltip-left {
+    right: 130%;
+    top: 50%;
+    transform: translateY(-50%) translateX(5px);
+}
+.brutal-icon-btn:hover .brutal-tooltip-left {
+    transform: translateY(-50%) translateX(0);
+}
 
 .brutal-overlay {
     backdrop-filter: blur(8px) !important;
@@ -384,6 +392,7 @@ body {
     z-index: 99 !important;
 }
 dialog.brutal-dialog {
+    display: none;
     position: fixed;
     top: 0; bottom: 0; left: 0;
     margin: 0;
@@ -397,15 +406,27 @@ dialog.brutal-dialog {
     border: none !important;
     border-right: var(--border-thick) !important;
     padding: 0 !important;
-    box-shadow: 10px 0px 0px rgba(0,0,0,0.5) !important; 
+    box-shadow: 10px 0px 0px rgba(0,0,0,0.5) !important;
+    flex-direction: column;
+    overflow: hidden;
+}
+dialog.brutal-dialog[open] {
+    display: flex;
+}
+dialog.brutal-dialog-right {
+    left: auto;
+    right: 0;
+    border-right: none !important;
+    border-left: var(--border-thick) !important;
+    box-shadow: -10px 0px 0px rgba(0,0,0,0.5) !important;
 }
 dialog.brutal-dialog-large {
     max-width: 800px;
 }
-dialog.brutal-dialog::-webkit-scrollbar { width: 8px; }
-dialog.brutal-dialog::-webkit-scrollbar-track { background: var(--bg-dark); }
-dialog.brutal-dialog::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
-dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+dialog.brutal-dialog ::-webkit-scrollbar { width: 8px; }
+dialog.brutal-dialog ::-webkit-scrollbar-track { background: var(--bg-dark); }
+dialog.brutal-dialog ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+dialog.brutal-dialog ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
 
 .brutal-dialog-header {
     background: var(--bg-dark);
@@ -413,6 +434,13 @@ dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-
     z-index: 10;
     position: sticky;
     top: 0;
+}
+.brutal-dialog-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
 }
 .brutal-dialog-nav {
     display: flex;
@@ -446,14 +474,56 @@ dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-
     gap: 0.5rem;
 }
 .brutal-dialog-content {
-    padding: 6rem 1.5rem 2rem 1.5rem;
+    padding: 1.5rem;
     overflow-y: auto;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
 }
 .brutal-dialog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+}
+
+.brutal-toc {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+.brutal-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.brutal-toc ol ol {
+    padding-left: 1rem;
+    border-left: 2px solid #3f3f46;
+    margin-top: 0.25rem;
+}
+.brutal-toc li {
+    margin: 0.4rem 0;
+}
+.brutal-toc a {
+    display: block;
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+.brutal-toc a:hover {
+    color: var(--primary-color);
+    background: rgba(41, 182, 246, 0.08);
+}
+.brutal-toc > ol > li > a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .bento-card-compact {
     min-height: auto !important;
