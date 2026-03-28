@@ -88,10 +88,12 @@ layout: layouts/default.njk
 <div class="overlay brutal-overlay"></div>
 <dialog id="dialog-toc" class="brutal-dialog brutal-dialog-right">
     <div class="brutal-dialog-header">
-        <h3>Spis zawartości</h3>
-        <button class="brutal-icon-btn" data-ui="#dialog-toc" aria-label="Zamknij">
-            <i>{% icon "lucide:x" %}</i>
-        </button>
+        <nav class="brutal-dialog-nav">
+            <h3>Spis zawartości</h3>
+            <button class="brutal-icon-btn" data-ui="#dialog-toc" aria-label="Zamknij">
+                <i>{% icon "lucide:x" %}</i>
+            </button>
+        </nav>
     </div>
     <nav class="brutal-toc">
         {{ content | toc | safe }}
