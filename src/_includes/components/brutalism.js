@@ -148,6 +148,18 @@
     });
   }
 
+  function initTocLinks() {
+    const tocDialog = document.getElementById("dialog-toc");
+    if (!tocDialog) return;
+
+    tocDialog.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href^='#']");
+      if (link) {
+        closeDialog(tocDialog);
+      }
+    });
+  }
+
   window.mode = toggleMode;
   window.theme = setTheme;
 
@@ -155,5 +167,6 @@
     initTheme();
     initDialogs();
     initMenus();
+    initTocLinks();
   });
 })();

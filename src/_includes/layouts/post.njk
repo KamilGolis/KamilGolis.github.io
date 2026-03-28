@@ -85,14 +85,14 @@ layout: layouts/default.njk
     {{ content | safe }}
 </article>
 
-<dialog id="dialog-toc" class="brutal-dialog">
+<dialog id="dialog-toc" class="brutal-dialog brutal-dialog-right">
     <div class="brutal-dialog-header">
         <h3>Spis zawartości</h3>
         <button class="brutal-icon-btn" data-ui="#dialog-toc" aria-label="Zamknij">
             <i>{% icon "lucide:x" %}</i>
         </button>
     </div>
-    <div class="brutal-content">
+    <nav class="brutal-toc">
         {{ content | toc | safe }}
-    </div>
+    </nav>
 </dialog>
