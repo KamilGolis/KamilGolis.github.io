@@ -392,6 +392,7 @@ body {
     z-index: 99 !important;
 }
 dialog.brutal-dialog {
+    display: none;
     position: fixed;
     top: 0; bottom: 0; left: 0;
     margin: 0;
@@ -406,7 +407,11 @@ dialog.brutal-dialog {
     border-right: var(--border-thick) !important;
     padding: 0 !important;
     box-shadow: 10px 0px 0px rgba(0,0,0,0.5) !important;
-    overflow-y: auto;
+    flex-direction: column;
+    overflow: hidden;
+}
+dialog.brutal-dialog[open] {
+    display: flex;
 }
 dialog.brutal-dialog-right {
     left: auto;
@@ -418,10 +423,10 @@ dialog.brutal-dialog-right {
 dialog.brutal-dialog-large {
     max-width: 800px;
 }
-dialog.brutal-dialog::-webkit-scrollbar { width: 8px; }
-dialog.brutal-dialog::-webkit-scrollbar-track { background: var(--bg-dark); }
-dialog.brutal-dialog::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
-dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+dialog.brutal-dialog ::-webkit-scrollbar { width: 8px; }
+dialog.brutal-dialog ::-webkit-scrollbar-track { background: var(--bg-dark); }
+dialog.brutal-dialog ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+dialog.brutal-dialog ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
 
 .brutal-dialog-header {
     background: var(--bg-dark);
@@ -473,9 +478,10 @@ dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-
     gap: 0.5rem;
 }
 .brutal-dialog-content {
-    padding: 6rem 1.5rem 2rem 1.5rem;
+    padding: 1.5rem;
     overflow-y: auto;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
 }
 .brutal-dialog-grid {
     display: grid;
@@ -486,6 +492,8 @@ dialog.brutal-dialog::-webkit-scrollbar-thumb:hover { background: var(--primary-
 .brutal-toc {
     padding: 1.5rem;
     overflow-y: auto;
+    flex: 1;
+    min-height: 0;
 }
 .brutal-toc ol {
     list-style: none;

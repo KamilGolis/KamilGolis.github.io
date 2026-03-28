@@ -6,6 +6,7 @@ function createToc(eleventyConfig) {
         ignoredHeadings: ["[data-toc-exclude]"],
         ignoredElements: [".header-anchor"],
         ul: false,
+        wrapper: (toc) => toc,
     });
 }
 

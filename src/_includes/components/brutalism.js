@@ -19,7 +19,12 @@
     const overlays = document.querySelectorAll(".overlay");
     overlays.forEach((overlay) => {
       overlay.addEventListener("click", () => {
-        closeAllDialogs();
+        const sibling = overlay.nextElementSibling;
+        if (sibling && sibling.tagName === "DIALOG" && sibling.open) {
+          closeDialog(sibling);
+        } else {
+          closeAllDialogs();
+        }
       });
     });
 
@@ -38,11 +43,19 @@
     }
   }
 
+  function getOverlay(dialog) {
+    const sibling = dialog.previousElementSibling;
+    if (sibling && sibling.classList.contains("overlay")) {
+      return sibling;
+    }
+    return null;
+  }
+
   function openDialog(dialog) {
     dialog.showModal();
     dialog.classList.add("active");
 
-    const overlay = document.querySelector(".overlay");
+    const overlay = getOverlay(dialog);
     if (overlay) {
       overlay.classList.add("active");
     }
@@ -54,12 +67,13 @@
     dialog.close();
     dialog.classList.remove("active");
 
+    const overlay = getOverlay(dialog);
+    if (overlay) {
+      overlay.classList.remove("active");
+    }
+
     const openDialogs = document.querySelectorAll("dialog[open]");
     if (openDialogs.length === 0) {
-      const overlay = document.querySelector(".overlay");
-      if (overlay) {
-        overlay.classList.remove("active");
-      }
       document.body.style.overflow = "";
     }
   }
