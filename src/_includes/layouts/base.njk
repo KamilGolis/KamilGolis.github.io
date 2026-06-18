@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.lang }}">
 
 <head>
   <meta charset="utf-8">
@@ -34,11 +34,7 @@
   <link rel="stylesheet" href="/pagefind/pagefind-modular-ui.css">
   <script src="/pagefind/pagefind-modular-ui.js"></script>
 
-  <style>
-    {% include "components/style.css" %}
-    {% include "components/prism-theme.css" %}
-    {% include "components/brutalism.css" %}
-  </style>
+  <link rel="stylesheet" href="/css/{{ cssBundle }}">
   
   <script>
     {% include "components/brutalism.js" %}

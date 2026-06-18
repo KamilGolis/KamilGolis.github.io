@@ -25,19 +25,20 @@
     "url": "https://github.com/KamilGolis/KamilGolis.github.io/issues"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@mdi/svg": "^7.4.47",
-    "@pagefind/modular-ui": "^1.4.0",
+    "@pagefind/modular-ui": "^1.5.2",
     "@uncenter/eleventy-plugin-toc": "^1.0.3",
     "eleventy-plugin-icons": "^4.5.7",
     "feather-icons": "^4.29.2",
     "html-minifier-terser": "^7.2.0",
-    "line-md": "^2.0.8",
-    "lucide-static": "^0.562.0",
+    "lucide-static": "^1.21.0",
     "luxon": "^3.7.2",
-    "markdown-it": "^14.1.0",
-    "pagefind": "^1.4.0",
-    "simple-icons": "^16.3.0"
+    "markdown-it": "^14.2.0",
+    "pagefind": "^1.5.2",
+    "simple-icons": "^16.23.0"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.32.0"
   }
 }

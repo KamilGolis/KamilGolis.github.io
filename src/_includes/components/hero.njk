@@ -25,14 +25,14 @@
                     {% endif %}
 
                     {% if not hasTags %}
-                        <a href="/tags/wpis/" class="tag">#Wpis</a>
+                        <a href="/tags/wpis/" class="tag">{{ site.i18n.defaultTag }}</a>
                     {% endif %}
                 </div>
                 
                 <h3>{{ post.data.title }}</h3>
-                <p>{{ post.data.description | default('Kliknij, aby przeczytać ten artykuł i zgłębić temat.') }}</p>
+                <p>{{ post.data.description | default(site.i18n.defaultDescription) }}</p>
                 
-                <a href="{{ post.url }}" class="read-more">Czytaj dalej &rarr;</a>
+                <a href="{{ post.url }}" class="read-more">{{ site.i18n.readMore }}</a>
                 
             </article>
             
@@ -40,8 +40,8 @@
     {% endfor %}
     
     <a href="/tags/posts/" class="bento-card bento-card-more">
-        <h3>Więcej</h3>
-        <p>Zobacz wszystkie wpisy.</p>
+        <h3>{{ site.i18n.seeAll }}</h3>
+        <p>{{ site.i18n.seeAllDesc }}</p>
     </a>
 
 </div>

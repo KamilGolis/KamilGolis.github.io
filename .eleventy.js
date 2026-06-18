@@ -25,6 +25,8 @@ module.exports = function (eleventyConfig) {
   pagefindSync(eleventyConfig);
   createToc(eleventyConfig);
 
+  eleventyConfig.addWatchTarget("src/css/");
+
   eleventyConfig.addPassthroughCopy({
     "src/public": "/",
   });

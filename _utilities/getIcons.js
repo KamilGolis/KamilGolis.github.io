@@ -3,13 +3,10 @@ const pluginIcons = require('eleventy-plugin-icons');
 function getIcons(eleventyConfig) {
     eleventyConfig.addPlugin(pluginIcons, {
         mode: 'inline',
-        sources: [{
+        sources: [
+            {
                 name: 'si',
                 path: 'node_modules/simple-icons/icons'
-            },
-            {
-                name: 'mdi',
-                path: 'node_modules/@mdi/svg/svg'
             },
             {
                 name: 'lucide',

@@ -26,7 +26,7 @@
             {% endif %}
 
             {% if item.type == "button" %}
-            <button class="brutal-icon-btn" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+            <button class="brutal-icon-btn" data-action="{{ item.action }}" aria-label="{{ item.name }}">
                 <i>{% icon item.icon %}</i>
                 <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>
             </button>
@@ -40,7 +40,7 @@
             {% endif %}
 
             {% if item.type == "themeToggle" %}
-            <button class="brutal-icon-btn" onclick="{{ item.onClick }}" aria-label="{{ item.name }}">
+            <button class="brutal-icon-btn" data-action="toggle-mode" aria-label="{{ item.name }}">
                 <i class="dark">{% icon item.iconDark %}</i>
                 <i class="light">{% icon item.iconLight %}</i>
                 <span class="brutal-tooltip brutal-tooltip-bottom">{{ item.name }}</span>

@@ -41,7 +41,7 @@
             "name": "Szukaj...",
             "type": "button",
             "icon": "lucide:search",
-            "onClick": "document.getElementById('pf--wrapper').classList.toggle('active');"
+            "action": "toggle-search"
         },
         {
             "name": "RSS",
@@ -144,6 +144,21 @@
             "icon": "lucide:book-up",
             "url": "/posts/getting-started"
         }
+    },
+    "i18n": {
+        "updated": "Aktualizacja",
+        "author": "Autor",
+        "tableOfContents": "Spis zawartości",
+        "close": "Zamknij",
+        "viewSource": "Pokaż źródło strony",
+        "viewHistory": "Pokaż historię strony",
+        "editPage": "Edytuj stronę",
+        "defaultTag": "#Wpis",
+        "readMore": "Czytaj dalej →",
+        "defaultDescription": "Kliknij, aby przeczytać ten artykuł i zgłębić temat.",
+        "seeAll": "Więcej",
+        "seeAllDesc": "Zobacz wszystkie wpisy.",
+        "search": "Szukaj…"
     },
     "giscus": {
         "enabled": false,
