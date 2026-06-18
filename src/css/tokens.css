@@ -7,6 +7,8 @@
     --shadow-active: var(--primary-color);
     --bg-dark: #09090b;
     --card-dark: #18181b;
+    --text-main: #e4e4e7;
+    --text-muted: #a1a1aa;
 
     --font: "Google Sans", sans-serif;
     --font-code: "Google Sans Code", monospace;
