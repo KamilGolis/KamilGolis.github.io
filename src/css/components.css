@@ -153,6 +153,15 @@
     box-shadow: 5px 5px 0px #000;
 }
 
+.brutal-icon-btn:has(.brutal-menu.active) .brutal-tooltip {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+.brutal-icon-btn:has(.brutal-menu.active):hover {
+    transform: none !important;
+    box-shadow: 3px 3px 0px var(--shadow-color) !important;
+}
+
 .brutal-tooltip {
     position: absolute;
     background: var(--primary-color);

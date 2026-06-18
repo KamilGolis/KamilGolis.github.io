@@ -225,7 +225,7 @@ nav.brutal-nav-bottom {
     background: var(--bg-dark);
     border: var(--border-thick);
     color: var(--text-main);
-    border-radius: 6px;
+    border-radius: 8px;
     box-shadow: 3px 3px 0px var(--shadow-color);
     transition: all 0.2s ease;
 }
@@ -381,6 +381,11 @@ nav.brutal-nav-bottom .brutal-nav-link i {
 }
 menu.brutal-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
     background: var(--bg-dark) !important;
     border: var(--border-thick) !important;
     border-radius: 8px !important;
@@ -388,7 +393,7 @@ menu.brutal-menu {
     padding: 0.5rem !important;
     margin-top: 1rem !important;
 }
-.brutal-menu li { margin: 0; padding: 0; }
+.brutal-menu li { margin: 0; padding: 0; list-style: none; }
 .brutal-menu-link {
     display: block;
     font-weight: 900;
@@ -399,6 +404,7 @@ menu.brutal-menu {
     border-radius: 4px;
     transition: all 0.2s ease;
     cursor: pointer;
+    white-space: nowrap;
 }
 .brutal-menu-link:hover {
     background: var(--primary-color) !important;
