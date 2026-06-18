@@ -1,0 +1,45 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    font-size: 1.15rem;
+    line-height: 1.675;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    background-image: radial-gradient(#27272a 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--mesh-bg);
+    opacity: 0.25;
+}
+
+img {
+    max-width: 100%;
+}
+
+img[width][height] {
+    height: auto;
+}
+
+table {
+    overflow-x: auto;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--background);
+}
+
+:target {
+    scroll-margin-block-start: 15vh;
+}

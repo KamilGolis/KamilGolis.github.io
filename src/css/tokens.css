@@ -1,0 +1,37 @@
+:root {
+    --primary-color: #29b6f6; 
+    --primary-hover: #0ea5e9;
+    --border-thick: 2px solid #3f3f46;
+    --border-active: 2px solid var(--primary-color);
+    --shadow-color: #3f3f46;
+    --shadow-active: var(--primary-color);
+    --bg-dark: #09090b;
+    --card-dark: #18181b;
+
+    --font: "Google Sans", sans-serif;
+    --font-code: "Google Sans Code", monospace;
+    --font-icon: none;
+
+    --speed1: 0.1s;
+    --speed2: 0.2s;
+    --speed3: 0.3s;
+
+    --primary-container: rgba(41, 182, 246, 0.1);
+    --secondary-container: rgba(139, 92, 246, 0.1);
+    --tertiary-container: rgba(236, 72, 153, 0.1);
+    --surface-variant: rgba(63, 63, 70, 0.3);
+    --surface-container: rgba(24, 24, 27, 0.8);
+
+    --mesh-bg:
+        radial-gradient(at 40% 20%, var(--primary-container), transparent 60%),
+        radial-gradient(at 70% 80%, var(--secondary-container), transparent 60%),
+        radial-gradient(at 20% 70%, var(--tertiary-container), transparent 60%),
+        radial-gradient(at 80% 30%, var(--surface-variant), transparent 60%);
+
+    --noise-bg: url(/noise.svg);
+
+    --blur: saturate(1.8) blur(0.75rem);
+    --glass-bg: color-mix(in srgb, var(--surface-container) 50%, transparent);
+    --edge-highlight: inset 0 0.0625rem 0 rgb(255 255 255 / 0.1);
+    --shadow-glass: 0 0.75rem 1.5rem -1rem rgb(0 0 0 / 0.5);
+}
